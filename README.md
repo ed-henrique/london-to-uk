@@ -1,7 +1,8 @@
 # London to UK
 
 Report on spending volumes for London-based customers versus those based in the
-rest of the United Kingdom.
+rest of the United Kingdom. This report was created using a result-drive
+approach, as described in [Solve Any Data Analysis Problem](https://www.manning.com/books/solve-any-data-analysis-problem).
 
 ## 1. Understanding (Describing the problem)
 
@@ -37,9 +38,10 @@ transformed before use.
 
 ## 4. Obtain (Get data)
 
-**[Data](https://raw.githubusercontent.com/davidasboth/solve-any-data-analysis-problem/main/chapter-2/data/addresses.csv)**
+- **[UK List of Cities](https://www.gov.uk/government/publications/list-of-cities/list-of-cities-html)**
+- **[Customer Data](https://raw.githubusercontent.com/davidasboth/solve-any-data-analysis-problem/main/chapter-2/data/addresses.csv)**
 
-If using UNIX:
+If using UNIX (for Customer Data):
 
 ```bash
 curl -o data.csv https://raw.githubusercontent.com/davidasboth/solve-any-data-analysis-problem/main/chapter-2/data/addresses.csv
@@ -49,7 +51,32 @@ curl -o data.csv https://raw.githubusercontent.com/davidasboth/solve-any-data-an
 
 Check [this](./main.py).
 
-## Source
+## 6. Present (Show the results to the stakeholders)
 
-Most of this step-by-step framework to solve data analysis problems came from
-[Solve Any Data Analysis Problem](https://www.manning.com/books/solve-any-data-analysis-problem).
+![Results](./assets/result.png)
+
+- **Total spent by London customers**: £103M
+- **Total spent in the rest of the UK**: £387M
+- **Total spent in all major cities outside London**: £119M
+
+### Caveats
+
+- The cities used are only the major ones;
+- City `OTHER` may have some unidentified outliers that should belong to some
+major city, and if needed, the analysis can be improved further. Although, the
+overall result likely won't change.
+
+## 7. Iterate (Repeat from a previous step to make the result better)
+
+- Identify city or town based on postcode
+- Use Google Maps API (May raise privacy concerns)
+- Augment the data with demographic information for each city or town
+
+### New Problems
+
+- [ ] What do costumers spend figures look like at different levels of granularity?
+- [ ] Can you identify business adresses and consider comparing customers with
+private adresses versus those with business adresses?
+- [ ] Augment your geographic analysis with population figures or other
+demographics. Are there any patterns, such as relationship between the wealth of
+an area and the amount of customer spend?

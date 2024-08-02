@@ -37,12 +37,12 @@ transformed before use.
 
 ## 4. Obtain (Get data)
 
-**[Data](https://github.com/davidasboth/solve-any-data-analysis-problem/blob/main/chapter-2/data/addresses.csv)**
+**[Data](https://raw.githubusercontent.com/davidasboth/solve-any-data-analysis-problem/main/chapter-2/data/addresses.csv)**
 
 If using UNIX:
 
 ```bash
-curl -o data.csv https://github.com/davidasboth/solve-any-data-analysis-problem/blob/main/chapter-2/data/addresses.csv
+curl -o data.csv https://raw.githubusercontent.com/davidasboth/solve-any-data-analysis-problem/main/chapter-2/data/addresses.csv
 ```
 
 ## 5. Do (Hands-on)
